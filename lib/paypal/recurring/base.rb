@@ -31,6 +31,7 @@ module PayPal
       attr_accessor :trial_length
       attr_accessor :trial_period
       attr_accessor :trial_amount
+      attr_accessor :cpp_logo_image
 
       def initialize(options = {})
         options.each {|name, value| send("#{name}=", value)}
@@ -167,7 +168,8 @@ module PayPal
       #     :trial_period          => :monthly,
       #     :trial_length          => 1,
       #     :trial_frequency       => 1,
-      #     :trial_amount          => 0.00
+      #     :trial_amount          => 0.00,
+      #     :cpp_logo_image        => "http://example.com/image.jpg"
       #   })
       #
       #   response = ppr.create_recurring_profile
@@ -196,7 +198,8 @@ module PayPal
           :item_category,
           :item_name,
           :item_amount,
-          :item_quantity
+          :item_quantity,
+          :cpp_logo_image
         )
         request.run(:create_profile, params)
       end
