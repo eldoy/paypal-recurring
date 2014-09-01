@@ -70,6 +70,7 @@ module PayPal
           :item_name,
           :item_amount,
           :item_quantity
+          :cpp_logo_image
         ).merge(
           :payment_action => "Authorization",
           :no_shipping => 1,
@@ -198,8 +199,7 @@ module PayPal
           :item_category,
           :item_name,
           :item_amount,
-          :item_quantity,
-          :cpp_logo_image
+          :item_quantity
         )
         request.run(:create_profile, params)
       end
